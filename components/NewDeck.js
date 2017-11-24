@@ -17,18 +17,23 @@ class NewDeck extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      newDeck : ''
+      newtext : ''
     }
 
     this.handleChangeText = this.handleChangeText.bind(this)
     this.SaveDeck = this.SaveDeck.bind(this)
+  }
+  componentWillMount(){
+    this.setState({
+      newtext: ''
+    })
   }
 
   SaveDeck = () => {
     const { decks } = this.props
     const deck = this.state.newtext
     this.setState({
-      newDeck: ''
+      newtext: ''
     })
   
       const newDeck = {
@@ -38,7 +43,7 @@ class NewDeck extends Component {
         .then(() => this.props.dispatch(addDeck(newDeck)))
         .then(() => {
           
-          this.props.navigation.navigate('ListDeck')
+          this.props.navigation.navigate('NewDeck')
         })
         .catch(error => {
           console.log(error)
@@ -58,7 +63,7 @@ class NewDeck extends Component {
             What is the title of your new deck?
 					</Text>
           <TextInput
-            value={this.state.text}
+            value={this.state.newtext}
             style={styles.input}
             onChangeText={this.handleChangeText}
             placeholder={'Deck Title'}
@@ -85,7 +90,7 @@ const styles = StyleSheet.create({
   text: {
     color: 'black',
     
-    textAlign: 'center',
+    
   },
   input: {
     width: 250,

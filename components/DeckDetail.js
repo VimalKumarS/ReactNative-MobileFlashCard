@@ -1,17 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
-
+import { getDecks } from '../actions'
 class DeckDetail extends React.Component {
+    componentDidMount() {
+        const { dispatch } = this.props
+        //dispatch(getDecks(decks))
+		
+	}
+
+    // shouldComponentUpdate(nextProps, nextState){
+    //     return ( nextProps.navigation.state.params.questions.length  !== this.props.navigation.state.params.questions.length );
+    // }
     render() {
-        const { title, questions } = this.props.navigation.state.params
+        const { title, questions } = this.props
         
         return (
-            <View style={styles.container}>
+            <View style={[styles.container]}>
                 <View style={styles.headerText}>
-                    <Text style={styles.cardText}>{title}</Text>
+                    <Text style={[styles.cardText,{textAlign:'center'}]}>{title}</Text>
                     <Text style={styles.cardText}>
-                        {questions.length} cards
+                        {questions && questions.length} cards
                     </Text>
                 </View>
 
@@ -53,11 +62,11 @@ class DeckDetail extends React.Component {
      
       padding: 20,
       paddingBottom: 0,
-      textAlign: 'center'
+     
     },
     cardText: {
       
-      textAlign: 'center',
+        textAlign:'center',
       padding: 20,
       marginBottom: 20,
       color: 'black'
@@ -70,9 +79,11 @@ class DeckDetail extends React.Component {
     }
   })
 
-function mapStateToProps(state) {
+function mapStateToProps(state,props) {
+    const { title,questions } = props.navigation.state.params
     return {
-        decks: state,
+        title:title,
+        questions: state[title].questions,
     }
 }
 

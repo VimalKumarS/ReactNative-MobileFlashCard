@@ -110,7 +110,7 @@ class QuizView extends React.Component {
               ?
               <View>
                 <Text style={styles.question}>{deck.questions[currentCard].answer}</Text>
-                <TouchableOpacity style={[style.addCardBtn,{ borderColor: "green", marginBottom: 20 }]} onPress={this.showAnswer}>
+                <TouchableOpacity style={[style.addCardBtn,{ borderColor: "green",borderWidth:2,  marginBottom: 20 }]} onPress={this.showAnswer}>
                   <Text style={styles.cardText}>Question</Text>
                 </TouchableOpacity>
               </View>
@@ -146,30 +146,30 @@ const styles = StyleSheet.create({
 
     padding: 20,
     marginBottom: 20,
-    textAlign: 'center'
+    
   },
   answer: {
 
     color: "red",
     padding: 20,
     marginBottom: 20,
-    textAlign: 'center'
+   
   },
   quiz: {
 
     padding: 20,
     marginBottom: 20,
-    textAlign: 'center'
+    
   },
   score: {
 
     padding: 20,
     marginBottom: 20,
-    textAlign: 'center'
+    
   },
   cardText: {
     
-    textAlign: 'center',
+   textAlign:'center',
     padding: 20,
     marginBottom: 20,
     color: 'black'

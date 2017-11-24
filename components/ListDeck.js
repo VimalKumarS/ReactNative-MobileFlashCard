@@ -86,13 +86,13 @@ const styles = StyleSheet.create({
   headerText: {
     padding: 20,
    
-    textAlign: 'center'
+    
   },
   cardText: {
     paddingBottom: 20,
     
     color: blue,
-    textAlign: 'center'
+    
   }
 })
 

@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  TextInput,
+  TextInput
 } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 import { newCardToDeck } from '../utils/api'
@@ -23,7 +23,9 @@ class AddNewCard extends React.Component {
 
     this.addNewCard = this.addNewCard.bind(this)
   }
+ componentDidMount(){
 
+ }
 
   addNewCard = () => {
     const { question, answer } = this.state
@@ -94,17 +96,17 @@ const styles = StyleSheet.create({
     
     color: 'black',
     padding: 5,
-    textAlign: 'left'
+    
   },
   inputText: {
     height: 50,
    
-    textAlign: 'left',
+    
     marginBottom: 20
   },
   cardText: {
     
-    textAlign: 'center',
+    textAlign:'center',
     padding: 20,
     marginBottom: 20,
     color: 'black'
