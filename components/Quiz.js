@@ -103,7 +103,7 @@ class QuizView extends React.Component {
           </View>
           :
           <View>
-            <Text style={{ color: "red", padding: 10, fontSize: 20 }}>
+            <Text style={{ color: "purple", padding: 10 }}>
               {'Remaining Question: ' + (totalCards - (currentCard + 1))}
             </Text>
             {showAnswer
