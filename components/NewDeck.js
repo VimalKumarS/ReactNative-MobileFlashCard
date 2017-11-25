@@ -43,7 +43,7 @@ class NewDeck extends Component {
         .then(() => this.props.dispatch(addDeck(newDeck)))
         .then(() => {
           
-          this.props.navigation.navigate('NewDeck')
+          this.props.navigation.navigate('DeckDetail',{title:deck,questions:[]})
         })
         .catch(error => {
           console.log(error)
